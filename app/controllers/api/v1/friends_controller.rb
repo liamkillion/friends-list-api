@@ -27,7 +27,7 @@ class API::V1::FriendsController < ApplicationController
     render json: @friend
   end
 
-  def destory
+  def destroy
   end
 
   private

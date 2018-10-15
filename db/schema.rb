@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2018_10_13_210254) do
   create_table "friends", force: :cascade do |t|
     t.string "name"
     t.date "lastDateSeen"
-    t.integer "desiredFreqeuncy"
+    t.integer "desiredFrequency"
     t.string "notes"
   end
 

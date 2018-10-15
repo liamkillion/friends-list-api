@@ -27,7 +27,7 @@ class API::V1::HangsController < ApplicationController
     render json: @hang
   end
 
-  def destory
+  def destroy
   end
 
   private

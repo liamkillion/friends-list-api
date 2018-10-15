@@ -1,5 +1,6 @@
 require 'rest-client'
-class API::V1::HangsController < ApplicationController
+
+class Api::V1::HangsController < ApplicationController
 
   def index
     @hangs=Hang.all
@@ -17,7 +18,7 @@ class API::V1::HangsController < ApplicationController
       @hangs=Hang.all
       render json: @hangs
     else
-      render json @hang.errors, status :unprocessible_entity
+      render json @hang.errors, status: :unprocessible_entity
     end
   end
 

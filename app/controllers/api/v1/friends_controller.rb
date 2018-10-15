@@ -1,5 +1,6 @@
 require 'rest-client'
-class API::V1::FriendsController < ApplicationController
+
+class Api::V1::FriendsController < ApplicationController
 
   def index
     @friends=Friend.all
@@ -17,7 +18,7 @@ class API::V1::FriendsController < ApplicationController
       @friends=Friend.all
       render json: @friends
     else
-      render json @friend.errors, status :unprocessible_entity
+      render json @friend.errors, status: :unprocessible_entity
     end
   end
 

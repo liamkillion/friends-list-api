@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2018_10_13_210254) do
   end
 
   create_table "hangs", force: :cascade do |t|
-    t.integer "friend_id"
+    t.references :friend, null: false
     t.date "date"
     t.string "activity"
     t.boolean "didHang"

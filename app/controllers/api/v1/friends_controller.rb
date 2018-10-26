@@ -4,7 +4,7 @@ class Api::V1::FriendsController < ApplicationController
 
   def index
     @friends=Friend.all
-    render json: @friends
+    render json: @friends.map{|f| FriendSerializer.new(f).serializable_hash}
   end
 
   def show

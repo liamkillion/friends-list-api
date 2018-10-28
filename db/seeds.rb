@@ -8,31 +8,31 @@
 friends = Friend.create([
           {
             name: "Rebs",
-            lastDateSeen: "9/23/2018",
+            lastDateSeen: Date.new(2018,9,23),
             desiredFrequency: 14,
             notes: "likes concerts"
           },
           {
             name: "Dana",
-            lastDateSeen: "9/23/2018",
+            lastDateSeen: Date.new(2018,9,23),
             desiredFrequency: 21,
             notes: "likes going out to eat"
           },
           {
             name: "Todd",
-            lastDateSeen: "9/23/2018",
+            lastDateSeen: Date.new(2018,9,23),
             desiredFrequency: 7,
             notes: "likes riding bikes"
           },
           {
             name: "Liz",
-            lastDateSeen: "9/23/2018",
+            lastDateSeen: Date.new(2018,9,23),
             desiredFrequency: 11,
             notes: "likes going to bars"
           },
           {
             name: "Sebastian",
-            lastDateSeen: "9/23/2018",
+            lastDateSeen: Date.new(2018,9,23),
             desiredFrequency: 11,
             notes: "likes playing videogames"
           }
@@ -42,27 +42,27 @@ friends = Friend.create([
 hangs=Hang.create([
       {
         friend_id: 1,
-        date: "9/23/2018",
+        date: Date.new(2018,9,23),
         activity:"Went to the zoo",
         didHang: true
       },{
         friend_id: 2,
-        date: "9/23/2018",
+        date: Date.new(2018,9,23),
         activity:"Went to the zoo",
         didHang: true
       },{
         friend_id: 3,
-        date: "9/23/2018",
+        date: Date.new(2018,9,23),
         activity:"Went to the zoo",
         didHang: true
       },{
         friend_id: 4,
-        date: "9/23/2018",
+        date: Date.new(2018,9,23),
         activity:"Went to the zoo",
         didHang: true
       },{
         friend_id: 5,
-        date: "9/23/2018",
+        date: Date.new(2018,9,23),
         activity:"Went to the zoo",
         didHang: true
       },

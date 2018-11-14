@@ -4,7 +4,8 @@ class Api::V1::FriendsController < ApplicationController
 
   def index
     @friends=Friend.all
-    render json: @friends.map{|f| FriendSerializer.new(f).serializable_hash}
+    options[:include] = [:hangs, :'hangs.date', :'hangs.activity', :'hangs.didHang']
+    render json: @friends.map{|f| FriendSerializer.new(f,options).serializaed_json}
   end
 
   def show

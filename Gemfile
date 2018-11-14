@@ -6,6 +6,8 @@ ruby '2.5.1'
 gem 'rack-cors'
 gem 'rest-client'
 gem 'fast_jsonapi'
+gem "loofah", ">= 2.2.3"
+
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

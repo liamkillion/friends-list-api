@@ -1,3 +1,3 @@
 class Friend < ApplicationRecord
-  has_many :hangs
+  attr_accessor :name, :lastDateSeen, :desiredFrequency, :notes
 end

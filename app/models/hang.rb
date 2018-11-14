@@ -1,3 +1,3 @@
 class Hang < ApplicationRecord
-  belongs_to :friend
+  attr_accessor :date, :activity, :didHang
 end

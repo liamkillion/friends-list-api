@@ -39,7 +39,7 @@ friends = Friend.create([
         ])
 
 
-hangs=Hang.create([
+hangs = Hang.create([
       {
         friend_id: 1,
         date: Date.new(2018,9,23),

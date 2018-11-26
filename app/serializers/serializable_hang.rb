@@ -1,5 +1,5 @@
-class HangSerializer
-  include FastJsonapi::ObjectSerializer
+class SerializableHang < JSONAPI::Serializable::Resource
+  type 'hang'
   attributes :friend_id, :date, :activity, :didHang
   belongs_to :friend
 end

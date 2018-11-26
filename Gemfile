@@ -5,7 +5,7 @@ ruby '2.5.1'
 
 gem 'rack-cors'
 gem 'rest-client'
-gem 'fast_jsonapi'
+gem 'jsonapi-rails'
 gem 'loofah', ">= 2.2.3"
 
 

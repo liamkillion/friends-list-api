@@ -13,7 +13,7 @@ class Api::V1::FriendsController < ApplicationController
   end
 
   def create
-    @friend=Friend.new(params['id'])
+    @friend=Friend.new(params)
     if @friend.save
       @friends=Friend.all
       render json: @friends

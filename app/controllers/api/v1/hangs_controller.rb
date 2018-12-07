@@ -13,7 +13,7 @@ class Api::V1::HangsController < ApplicationController
   end
 
   def create
-    @hang=Hang.new(params['id'])
+    @hang=Hang.new(params)
     if @hang.save
       @hangs=Hang.all
       render json: @hangs

@@ -2,6 +2,9 @@ require 'rest-client'
 
 class Api::V1::FriendsController < ApplicationController
 
+  skip_before_action :verify_authenticity_token, only: [:create,:update,:destroy]
+
+
   def index
     @friends=Friend.all
     render jsonapi: @friends, include: [:hangs]
@@ -13,10 +16,10 @@ class Api::V1::FriendsController < ApplicationController
   end
 
   def create
-    @friend=Friend.new(params)
+    @friend=Friend.new(friend_params)
     if @friend.save
       @friends=Friend.all
-      render json: @friends
+      render jsonapi: @friends, include: [:hangs]
     else
       render json @friend.errors, status: :unprocessible_entity
     end

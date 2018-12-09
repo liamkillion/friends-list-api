@@ -2,7 +2,7 @@ class CreateFriends < ActiveRecord::Migration[5.2]
   def change
     create_table :friends do |t|
       t.string :name
-      t.date :lastDateSeen
+      t.string :lastDateSeen
       t.integer :desiredFrequency
       t.string :notes
     end

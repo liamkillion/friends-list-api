@@ -14,14 +14,14 @@ ActiveRecord::Schema.define(version: 2018_10_13_210254) do
 
   create_table "friends", force: :cascade do |t|
     t.string "name"
-    t.date "lastDateSeen"
+    t.string "lastDateSeen"
     t.integer "desiredFrequency"
     t.string "notes"
   end
 
   create_table "hangs", force: :cascade do |t|
     t.integer "friend_id"
-    t.date "date"
+    t.string "date"
     t.string "activity"
     t.boolean "didHang"
   end

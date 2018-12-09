@@ -36,6 +36,6 @@ class Api::V1::FriendsController < ApplicationController
 
   private
   def friend_params
-    params.require(:friend).permit(:name, :dateLastSeen, :desiredFreqeuncy, :notes)
+    params.require(:friend).permit(:name, :lastDateSeen, :desiredFrequency, :notes)
   end
 end

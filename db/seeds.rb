@@ -10,31 +10,31 @@ friends = Friend.create([
             name: "Rebs",
             lastDateSeen: "2018-09-23",
             desiredFrequency: 14,
-            notes: "likes concerts"
+            notes: "concerts"
           },
           {
             name: "Dana",
             lastDateSeen: "2018-09-23",
             desiredFrequency: 21,
-            notes: "likes going out to eat"
+            notes: "going out to eat"
           },
           {
             name: "Todd",
             lastDateSeen: "2018-09-23",
             desiredFrequency: 7,
-            notes: "likes riding bikes"
+            notes: "riding bikes"
           },
           {
             name: "Liz",
             lastDateSeen: "2018-09-23",
             desiredFrequency: 11,
-            notes: "likes going to bars"
+            notes: "going to bars"
           },
           {
             name: "Sebastian",
             lastDateSeen: "2018-09-23",
             desiredFrequency: 11,
-            notes: "likes playing videogames"
+            notes: "playing videogames"
           }
         ])
 

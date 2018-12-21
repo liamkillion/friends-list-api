@@ -1,4 +1,6 @@
 require 'rest-client'
+require 'pry'
+
 
 class Api::V1::HangsController < ApplicationController
 
@@ -15,7 +17,7 @@ class Api::V1::HangsController < ApplicationController
   end
 
   def create
-    @hang=Hang.new(params)
+    @hang=Hang.new(hang_params)
     if @hang.save
       @hangs=Hang.all
       render json: @hangs
@@ -35,6 +37,6 @@ class Api::V1::HangsController < ApplicationController
 
   private
   def hang_params
-    params.require(:hang).permit(:date, :activity, :didHang)
+    params.require(:hang).permit(:friend_id, :date, :activity, :didHang)
   end
 end

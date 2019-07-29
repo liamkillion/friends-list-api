@@ -8,7 +8,7 @@ class Api::V1::HangsController < ApplicationController
 
   def index
     @hangs=Hang.all
-    render json: @hangs
+    render jsonapi: @hangs
   end
 
   def show

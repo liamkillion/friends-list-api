@@ -20,9 +20,9 @@ class Api::V1::HangsController < ApplicationController
     @hang=Hang.new(hang_params)
     if @hang.save
       @hangs=Hang.all
-      render json: @hangs
+      render jsonapi: @hangs, include: [:friend]
     else
-      render json @hang.errors, status: :unprocessible_entity
+      render jsonapi: @hang.errors, status: :unprocessible_entity
     end
   end
 

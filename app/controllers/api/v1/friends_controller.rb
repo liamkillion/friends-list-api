@@ -1,24 +1,24 @@
 require 'rest-client'
 
-class Api::V1::FriendsController < EndUserBaseController
+class Api::V1::FriendsController < ApplicationController
 
   skip_before_action :verify_authenticity_token, only: [:create,:update,:destroy]
-  before_filter :authenticate_user!
+
 
   def index
-    @friends = @user.friends
+    @friends=Friend.all
     render jsonapi: @friends, include: [:hangs]
   end
 
   def show
-    @friend=@user.friends.find(params['id'])
+    @friend=Friend.find(params['id'])
     render json: @friend
   end
 
   def create
-    @friend=@user.friends.build(friend_params)
+    @friend=Friend.new(friend_params)
     if @friend.save
-      @friends=@user.friends
+      @friends=Friend.all
       render jsonapi: @friends, include: [:hangs]
     else
       render json @friend.errors, status: :unprocessible_entity
@@ -26,7 +26,7 @@ class Api::V1::FriendsController < EndUserBaseController
   end
 
   def update
-    @friend=@user.friends.find(params['id'])
+    @friend=Friend.find(params['id'])
     @friend.update(params)
     render json: @friend
   end

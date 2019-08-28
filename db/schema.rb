@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_30_210746) do
+ActiveRecord::Schema.define(version: 2019_08_28_222721) do
 
   create_table "friends", force: :cascade do |t|
     t.integer "user_id"
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2019_08_30_210746) do
     t.string "lastDateSeen"
     t.integer "desiredFrequency"
     t.string "notes"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_friends_on_user_id"
   end
 
   create_table "hangs", force: :cascade do |t|
@@ -33,9 +35,6 @@ ActiveRecord::Schema.define(version: 2019_08_30_210746) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "username"
-    t.string "password"
-    t.string "avatar_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

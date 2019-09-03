@@ -1,6 +1,4 @@
 require 'rest-client'
-require 'pry'
-
 
 class Api::V1::HangsController < ApplicationController
 

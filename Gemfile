@@ -7,7 +7,10 @@ gem 'rack-cors'
 gem 'rest-client'
 gem 'jsonapi-rails'
 gem 'loofah', ">= 2.2.3"
-
+#auth
+gem 'devise'
+gem "draft_generators", :git => "https://github.com/firstdraft/draft_generators", :branch => "spring-2019"
+#debud
 gem 'pry'
 gem 'rack', '>=2.0.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

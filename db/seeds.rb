@@ -7,30 +7,35 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 friends = Friend.create([
           {
+            user_id: 1,
             name: "Rebs",
             lastDateSeen: "2018-09-23",
             desiredFrequency: 14,
             notes: "concerts"
           },
           {
+            user_id: 1,
             name: "Dana",
             lastDateSeen: "2018-09-23",
             desiredFrequency: 21,
             notes: "going out to eat"
           },
           {
+            user_id: 1,
             name: "Todd",
             lastDateSeen: "2018-09-23",
             desiredFrequency: 7,
             notes: "riding bikes"
           },
           {
+            user_id: 1,
             name: "Liz",
             lastDateSeen: "2018-09-23",
             desiredFrequency: 11,
             notes: "going to bars"
           },
           {
+            user_id: 1,
             name: "Sebastian",
             lastDateSeen: "2018-09-23",
             desiredFrequency: 11,

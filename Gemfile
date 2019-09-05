@@ -8,7 +8,10 @@ gem 'rest-client'
 gem 'jsonapi-rails'
 gem 'loofah', ">= 2.2.3"
 
+gem 'devise'
+#auth
 gem 'pry'
+#debug
 gem 'rack', '>=2.0.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'

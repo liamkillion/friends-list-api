@@ -6,13 +6,13 @@ class Api::V1::FriendsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @friends=Friend.all
+    @friends=current_user.friends.all
     render jsonapi: @friends, include: [:hangs]
   end
 
   def show
-    @friend=Friend.find(params['id'])
-    render json: @friend
+    @friend=current_user.friends.find(params['id'])
+    render json: @friend, include: [:hangs]
   end
 
   def create
@@ -26,7 +26,7 @@ class Api::V1::FriendsController < ApplicationController
   end
 
   def update
-    @friend=Friend.find(params['id'])
+    @friend=current_user.friends.find(params['id'])
     @friend.update(params)
     render json: @friend
   end

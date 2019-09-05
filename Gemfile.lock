@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/firstdraft/draft_generators
+  revision: b18e9dde563fc195298a046452ad4fe745d3f837
+  branch: spring-2019
+  specs:
+    draft_generators (0.0.3)
+      devise
+
 GEM
   remote: https://rubygems.org/
   specs:

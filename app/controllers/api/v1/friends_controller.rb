@@ -39,3 +39,6 @@ class Api::V1::FriendsController < ApplicationController
     params.require(:friend).permit(:name, :lastDateSeen, :desiredFrequency, :notes)
   end
 end
+
+# https://blog.eq8.eu/article/rails-api-authentication-with-spa-csrf-tokens.html
+# forms 

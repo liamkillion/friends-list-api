@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
+  before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
@@ -59,4 +59,27 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      render jsonapi: @user, include: [:friends]
+    else
+      render json @friend.errors, status: :unprocessible_entity
+    end
+  end
+
+  def destroy
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(
+       :email,
+       :encrypted_password,
+       :username,
+       :password,
+       :avatar_url
+    )
+  end
 end

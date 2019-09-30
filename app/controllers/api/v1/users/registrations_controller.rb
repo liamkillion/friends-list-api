@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'pry'
 
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
@@ -61,6 +62,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   def create
+    binding.pry
     @user = User.new(user_params)
     if @user.save
       render jsonapi: @user, include: [:friends]
@@ -76,10 +78,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def user_params
     params.require(:user).permit(
        :email,
-       :encrypted_password,
-       :username,
-       :password,
-       :avatar_url
+       :password
     )
   end
 end

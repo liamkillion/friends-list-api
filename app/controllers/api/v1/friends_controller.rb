@@ -3,7 +3,7 @@ require 'rest-client'
 class Api::V1::FriendsController < EndUserBaseController
 
   skip_before_action :verify_authenticity_token, only: [:create,:update,:destroy]
-  before_filter :authenticate_user!
+  
 
   def index
     @friends = @user.friends

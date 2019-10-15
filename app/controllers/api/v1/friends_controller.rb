@@ -3,9 +3,11 @@ require 'rest-client'
 class Api::V1::FriendsController < ApplicationController
 
   skip_before_action :verify_authenticity_token, only: [:create,:update,:destroy]
-  before_action :authenticate_scope!
+  # before_action :authenticate_scope!
 
   def index
+    session['foo'] ||= 'bar'
+    return render jsonapi: [{'foo' => session['foo']}]
     @friends=current_user.friends.all
     render jsonapi: @friends, include: [:hangs]
   end

@@ -7,8 +7,9 @@ gem 'rack-cors'
 gem 'rest-client'
 gem 'jsonapi-rails'
 gem 'loofah', ">= 2.2.3"
+
 #auth
-gem 'devise'
+gem 'knock'
 #debug
 gem 'pry'
 gem 'rack', '>=2.0.6'

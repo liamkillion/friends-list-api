@@ -2,10 +2,9 @@ require 'rest-client'
 require 'pry'
 
 
-class Api::V1::HangsController < ApplicationController
+class Api::V1::HangsController < UsersController
 
   skip_before_action :verify_authenticity_token, only: [:create,:update,:destroy]
-
 
   def index
     @hangs=Hang.all

@@ -1,11 +1,12 @@
 require 'rest-client'
 
-class Api::V1::FriendsController < EndUserBaseController
+class Api::V1::FriendsController < UsersController
 
   skip_before_action :verify_authenticity_token, only: [:create,:update,:destroy]
-  
+
 
   def index
+    @user = User.find(current('id'))
     @friends = @user.friends
     render jsonapi: @friends, include: [:hangs]
   end

@@ -2,7 +2,7 @@ require 'rest-client'
 require 'pry'
 
 
-class Api::V1::HangsController < UsersController
+class Api::V1::HangsController < ApplicationController
 
   skip_before_action :verify_authenticity_token, only: [:create,:update,:destroy]
 

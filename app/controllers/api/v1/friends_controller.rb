@@ -3,7 +3,7 @@ require 'rest-client'
 class Api::V1::FriendsController < ApplicationController
 
   skip_before_action :verify_authenticity_token, only: [:create,:update,:destroy]
-
+  # before_action :authenticate_user
 
   def index
     @friends = current_user.friends
@@ -28,7 +28,7 @@ class Api::V1::FriendsController < ApplicationController
   def update
     @friend=current_user.friends.find(params['id'])
     @friend.update(params)
-    render json: @friend
+    render jsonapi: @friend
   end
 
   def destroy

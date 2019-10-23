@@ -1,14 +1,29 @@
 class Api::V1::UsersController < ApplicationController
   before_action :authenticate_user
 
-  def create
-    @user = User.new(params)
-    # auth
-    if @user.save
-        render  jsonapi: current_user
-      else
-
+  def find
+    @user = User.find_by(email: user_params[:user][:email])
+    if @user
+      render jsonapi: @user
+    else
+      @errors = @user.errors.full_messages
+    end
   end
+
+  def create
+    @user = User.new(user_params)
+    if @user
+      render json: current_user.as_json(only: %i(id email))
+    else
+      @errors = @user.errors.full_messages
+    end
+  end
+
+  def update
+    @user = curent_user
+    @user.update(user_params)
+  end
+
   def current
     render json: current_user.as_json(only: %i(id email))
   end

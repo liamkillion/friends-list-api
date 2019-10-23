@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :friends, :hangs
       post 'user/token' => 'user_token#create'
       get 'users/current' => 'users#current'
+      post 'find'
       root to: "home#index"
     end
   end
